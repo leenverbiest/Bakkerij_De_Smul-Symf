@@ -1,21 +1,82 @@
 <!DOCTYPE html>
 <html>
+    {% block head %}
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}Bakkerij De Smul{% endblock %}</title>
         {% block stylesheets %}
-            <link rel="stylesheet" href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}">
+            <link rel="stylesheet" href="{{ asset('vendor/foundation/foundation.min.css') }}">
             <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
             <link rel="stylesheet" href="{{ asset('vendor/fontawesome/css/font-awesome.min.css') }}">
-        {% endblock %}
+
+        {% endblock stylesheets %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
+    {% endblock head %}
+
+    {#body#}
     <body>
-        {% block body %}{% endblock %}
+
+    {% block topnavigatie %}
+        <header>
+            <div class="top-bar">
+                <div class="wrapper">
+                    <div class="top-bar-left">
+                        <h3>Bakkerij De Smul</h3>
+                    </div>
+                    <div class="top-bar-right">
+                        <ul class="menu">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Producten</a></li>
+                            <li><a href="#">Klantendienst</a></li>
+                            <li><button type="button" class="button"><a href="#">Inloggen</a></button></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header> {# einde header #}
+    {% endblock topnavigatie %}
+    {% block content %}
+
+    {% endblock content %}
+    {% block footer %}
+        <footer>
+            <div class="wrapper row small-up-1 medium-up-3">
+                <div class="column">
+                    <h4>Contact</h4>
+                    <hr>
+                    <a href="#"><span>Telefoon </span>050/24 25 16</a>
+                    <a href="#"><span>Email </span>info@desmul.be</a>
+                    <a href="#"><span>Adres </span>Archimedesstraat 4,8400 Oostende</a>
+                </div>
+                <div class="column">
+                    <h4>Sitemap</h4>
+                    <hr>
+                    <a href="#">Over ons</a>
+                    <a href="#">Diensten</a>
+                    <a href="#">Contacteer ons</a>
+                </div>
+                <div class="column">
+                    <h4>Sociale Media</h4>
+                    <hr>
+                    <a href="#">Facebook</a>
+                    <a href="#">Twitter</a>
+                    <a href="#">LinkedIn</a>
+                </div>
+
+
+
+            </div>
+        </footer>
+        {# einde footer #}
+    {% endblock footer %}
 
         {% block javascripts %}
-            <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
-            <script src="{{ asset('js/main.js') }}"></script>
+            <script src="{{ asset ('vendor/jquery/jquery.js') }}"></script>
+            <script src="{{ asset ('vendor/jquery/jquery-ui.min.js') }}"></script>
+            <script src="{{ asset ('vendor/jquery/jquery.datepicker-nl-BE.js') }}"></script>
+            <script src="{{ asset ('vendor/foundation/foundation.min.js') }}"></script>
+            <script src="{{ asset('js/basis.js') }}"></script>
         {% endblock %}
     </body>
 </html>
